@@ -781,18 +781,38 @@ window.addEventListener('touchstart', (event) => {
 	debounce(disturbAnumation(event.target), 300);
 });
 
-// run camera animation with doubleclick
-window.addEventListener('dblclick', (event) => {
-	if (shouldSkipEventHandling(event.target)) {
-		return;
-	} else {
-		if (!Store.cameraAnimationEnabled) {
-			Store.cameraAnimationEnabled = true;
-			Store.camera.currentCameraPositionMode = 'animated_1';
+// fullscrean mode
+window.addEventListener('dblclick', () => {
+	const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement;
+	if (!fullscreenElement) {
+		if (canvas.requestFullscreen) {
+			canvas.requestFullscreen();
 			cameraAnimation_1_TurnOn();
+		} else if (canvas.webkitRequestFullscreen) {
+			canvas.webkitRequestFullscreen();
+			cameraAnimation_1_TurnOn();
+		}
+	} else {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
 		}
 	}
 });
+
+// run camera animation with doubleclick
+// window.addEventListener('dblclick', (event) => {
+// 	if (shouldSkipEventHandling(event.target)) {
+// 		return;
+// 	} else {
+// 		if (!Store.cameraAnimationEnabled) {
+// 			Store.cameraAnimationEnabled = true;
+// 			Store.camera.currentCameraPositionMode = 'animated_1';
+// 			cameraAnimation_1_TurnOn();
+// 		}
+// 	}
+// });
 
 // RELOAD webpage handler
 window.addEventListener('beforeunload', function () {
