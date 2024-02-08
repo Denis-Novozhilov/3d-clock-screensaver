@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3D Clock @isitdarkness</title>
+		<link rel="shortcut icon" href="/favicons/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+		<link rel="manifest" href="/favicons/site.webmanifest" />
+		<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#333333" />
+		<meta name="msapplication-TileColor" content="#000000" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<canvas class="webgl"></canvas>
+		<div class="links">
+			<button class="link links-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+					<path
+						fill="currentColor"
+						d="M220 156v36c0 13.85-1.63 26.52-4.58 35.68a12 12 0 0 1-22.84-7.36c2.14-6.65 3.42-17.24 3.42-28.32v-36a8 8 0 0 0-16 0v4a12 12 0 0 1-24 0v-20a8 8 0 0 0-16 0v12a12 12 0 0 1-24 0V84a8 8 0 0 0-16 0v108a12 12 0 0 1-22.18 6.34l-18.68-30l-.21-.34A8 8 0 0 0 45 175.92l25.27 41.88a12 12 0 0 1-20.56 12.39l-25.31-42l-.12-.2A32 32 0 0 1 76 150.83V84a32 32 0 0 1 64 0v25a32 32 0 0 1 36.78 17A32 32 0 0 1 220 156M48 96a12 12 0 0 0 12-12a48 48 0 0 1 96 0a12 12 0 0 0 24 0a72 72 0 0 0-144 0a12 12 0 0 0 12 12"
+					/>
+				</svg>
+				made by @isitdarkness
+			</button>
+			<a class="link" target="blank" href="https://t.me/dennovozhilov1">Telegram</a>
+			<a class="link" target="blank" href="https://www.linkedin.com/in/denis-novozhilov">
+				LinkedIn
+			</a>
+			<a class="link" target="blank" href="https://www.instagram.com/isitdarkness/">Instagram</a>
+		</div>
+		<div class="controls close">
+			<button class="controls__btn controls-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d="M2 22L22 2v9.65q-.475-.225-.975-.363T20 11.076v-4.25L6.825 20h5.425q.15.55.4 1.038t.55.962zm4.825-2L20 6.825l-6.587 6.587zM18 23l-.3-1.5q-.3-.125-.562-.262T16.6 20.9l-1.45.45l-1-1.7l1.15-1q-.05-.325-.05-.65t.05-.65l-1.15-1l1-1.7l1.45.45q.275-.2.538-.337t.562-.263L18 13h2l.3 1.5q.3.125.563.263t.537.337l1.45-.45l1 1.7l-1.15 1q.05.325.05.65t-.05.65l1.15 1l-1 1.7l-1.45-.45q-.275.2-.537.338t-.563.262L20 23zm1-3q.825 0 1.413-.587T21 18q0-.825-.587-1.412T19 16q-.825 0-1.412.588T17 18q0 .825.588 1.413T19 20"
+					/>
+				</svg>
+			</button>
+			<button class="controls__btn theme-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.04 10 9c0 3.31-2.69 6-6 6h-1.77c-.28 0-.5.22-.5.5c0 .12.05.23.13.33c.41.47.64 1.06.64 1.67A2.5 2.5 0 0 1 12 22m0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5a.54.54 0 0 0-.14-.35c-.41-.46-.63-1.05-.63-1.65a2.5 2.5 0 0 1 2.5-2.5H16c2.21 0 4-1.79 4-4c0-3.86-3.59-7-8-7"
+					/>
+					<circle cx="6.5" cy="11.5" r="1.5" fill="currentColor" />
+					<circle cx="9.5" cy="7.5" r="1.5" fill="currentColor" />
+					<circle cx="14.5" cy="7.5" r="1.5" fill="currentColor" />
+					<circle cx="17.5" cy="11.5" r="1.5" fill="currentColor" />
+				</svg>
+			</button>
+			<button class="controls__btn wireframe-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 7h16M4 17h16M7 4v16M17 4v16"
+					/>
+				</svg>
+			</button>
+			<button class="controls__btn lights-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d="M4.95 7.325L4.2 6.6q-.3-.275-.288-.687T4.2 5.2q.3-.3.713-.312t.712.287l.725.725q.275.275.288.688T6.35 7.3q-.275.275-.687.288t-.713-.263M11 4V3q0-.425.288-.712T12 2q.425 0 .713.288T13 3v1q0 .425-.288.713T12 5q-.425 0-.712-.288T11 4m6.7 1.875l.7-.7q.275-.275.688-.275t.712.3q.275.275.275.7t-.275.7l-.7.7q-.275.275-.688.288t-.712-.263q-.3-.3-.3-.725t.3-.725M9 20v-3l-2.425-2.425q-.275-.275-.425-.638T6 13.176V11q0-.825.587-1.412T8 9h8q.825 0 1.413.588T18 11v2.175q0 .4-.15.763t-.425.637L15 17v3q0 .825-.587 1.413T13 22h-2q-.825 0-1.412-.587T9 20m2 0h2v-3.825l3-3V11H8v2.175l3 3zm1-4.5"
+					/>
+				</svg>
+			</button>
+			<button class="controls__btn light-helpers-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d="M12 11a1 1 0 0 1 1 1a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1M4.22 4.22C5.65 2.79 8.75 3.43 12 5.56c3.25-2.13 6.35-2.77 7.78-1.34c1.43 1.43.79 4.53-1.34 7.78c2.13 3.25 2.77 6.35 1.34 7.78c-1.43 1.43-4.53.79-7.78-1.34c-3.25 2.13-6.35 2.77-7.78 1.34c-1.43-1.43-.79-4.53 1.34-7.78c-2.13-3.25-2.77-6.35-1.34-7.78m11.32 4.24c.61.62 1.17 1.25 1.69 1.88c1.38-2.13 1.88-3.96 1.13-4.7c-.74-.75-2.57-.25-4.7 1.13c.63.52 1.26 1.08 1.88 1.69m-7.08 7.08c-.61-.62-1.17-1.25-1.69-1.88c-1.38 2.13-1.88 3.96-1.13 4.7c.74.75 2.57.25 4.7-1.13c-.63-.52-1.26-1.08-1.88-1.69m-2.82-9.9c-.75.74-.25 2.57 1.13 4.7c.52-.63 1.08-1.26 1.69-1.88c.62-.61 1.25-1.17 1.88-1.69c-2.13-1.38-3.96-1.88-4.7-1.13m4.24 8.48c.7.7 1.42 1.34 2.12 1.91c.7-.57 1.42-1.21 2.12-1.91c.7-.7 1.34-1.42 1.91-2.12c-.57-.7-1.21-1.42-1.91-2.12c-.7-.7-1.42-1.34-2.12-1.91c-.7.57-1.42 1.21-2.12 1.91c-.7.7-1.34 1.42-1.91 2.12c.57.7 1.21 1.42 1.91 2.12m8.48 4.24c.75-.74.25-2.57-1.13-4.7c-.52.63-1.08 1.26-1.69 1.88c-.62.61-1.25 1.17-1.88 1.69c2.13 1.38 3.96 1.88 4.7 1.13"
+					/>
+				</svg>
+			</button>
+			<button class="controls__btn camera-anim-toggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+					<g fill="none">
+						<path
+							d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+						/>
+						<path
+							fill="currentColor"
+							d="M16 4a2 2 0 0 1 1.995 1.85L18 6v2.21l2.094-1.29a1.25 1.25 0 0 1 1.9.943l.006.12v8.034a1.25 1.25 0 0 1-1.8 1.122l-.106-.058L18 15.79V18a2 2 0 0 1-1.85 1.995L16 20H4a2 2 0 0 1-1.995-1.85L2 18V6a2 2 0 0 1 1.85-1.995L4 4zm0 2H4v12h12zm4 3.327l-2 1.232v2.883l2 1.232z"
+						/>
+					</g>
+				</svg>
+			</button>
+		</div>
+
+		<script type="module" src="./script.js"></script>
+	</body>
+</html>
