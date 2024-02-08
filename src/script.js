@@ -108,7 +108,7 @@ const Store = {
 		}
 	},
 	animationLightsDuration: 10,
-	controlsOpened: getLocal('controlsOpened'),
+	controlsOpened: getLocal('controlsOpened') ? getLocal('controlsOpened') : true,
 	toggleControls: function () {
 		if (this.controlsOpened) {
 			this.controlsOpened = false;
@@ -758,9 +758,8 @@ const shouldSkipEventHandling = (target) => {
 	);
 };
 
-// activate changing camera position by user - stop gsap camera animation
-window.addEventListener('mousedown', (event) => {
-	if (shouldSkipEventHandling(event.target)) {
+const disturbAnumation = (target) => {
+	if (shouldSkipEventHandling(target)) {
 		return;
 	}
 
@@ -773,6 +772,13 @@ window.addEventListener('mousedown', (event) => {
 	if (Store.camera.currentCameraPositionMode === 'animated_1') {
 		Store.camera.currentCameraPositionMode = 'controlled';
 	}
+};
+// activate changing camera position by user - stop gsap camera animation
+window.addEventListener('mousedown', (event) => {
+	debounce(disturbAnumation(event.target), 300);
+});
+window.addEventListener('touchstart', (event) => {
+	debounce(disturbAnumation(event.target), 300);
 });
 
 // run camera animation with doubleclick

@@ -6,11 +6,11 @@ export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', '
 
 // Colors
 export const COLOR_THEMES = [
+	'orange',
 	'darkness',
 	'black',
 	'light',
 	'red',
-	'orange',
 	'ultra',
 	'pink',
 	'green',
