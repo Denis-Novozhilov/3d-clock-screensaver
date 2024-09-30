@@ -2,7 +2,20 @@
 export const CAMERA_POSITIONS = ['animated_1', 'controlled', 'stable_1', 'stable_2'];
 
 // Months
-export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
+export const MONTHS = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December'
+];
 
 // Colors
 export const COLOR_THEMES = [
